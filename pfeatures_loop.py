@@ -17,7 +17,7 @@ for url, filename in url_dict.items():
 os.system("cd-hit -i train_po.fasta -o train_po_cdhit.txt -c 0.99")
 os.system("cd-hit -i train_ne.fasta -o train_ne_cdhit.txt -c 0.99")
 
-############### COPY AND PASTE THIS PART INTO THE NOTEBOOK BY CHANNIN AT THE POINT OF PROCESSING THE FILES WITH PFEATURE (DON'T FORGET TO IMPORT Pfeature * ########################
+############### COPY AND PASTE THIS PART INTO THE NOTEBOOK BY CHANIN AT THE POINT OF PROCESSING THE FILES WITH PFEATURE (DON'T FORGET TO IMPORT Pfeature * ########################
 
 #Create a dictionary of the functions and their names to iterate through so as to get the right description for looping through and automating the functions
 pfeatures = {
