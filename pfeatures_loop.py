@@ -3,17 +3,20 @@ import pandas as pd
 import os
 import requests
 
-
+#Assign the positive and negative files
 pos_file_url = "https://raw.githubusercontent.com/dataprofessor/AMP/main/train_po.fasta"
 negative_file_url = "https://raw.githubusercontent.com/dataprofessor/AMP/main/train_ne.fasta"
 
+#Create a vairbale:filename dictionary
 url_dict = {pos_file_url:'train_po.fasta', negative_file_url:'train_ne.fasta'}
 
+#Loop through the variables in the dictionary and save the contents as filenames in the dictionary
 for url, filename in url_dict.items():
   r = requests.get(url)
   with open (f'{filename}', 'wb') as f:
     f.write(r.content)
-  
+ 
+#Process the files with cd-hit
 os.system("cd-hit -i train_po.fasta -o train_po_cdhit.txt -c 0.99")
 os.system("cd-hit -i train_ne.fasta -o train_ne_cdhit.txt -c 0.99")
 
